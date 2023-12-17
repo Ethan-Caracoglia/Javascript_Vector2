@@ -17,10 +17,17 @@ class Vector2 {
 
     // Returns a normalized version of the current Vector2
     normalized() {
-        return new Vector2(
-            this.x / this.magnitude(),
-            this.y / this.magnitude()
-        );
+        if (this.magnitude != 0) { 
+            return new Vector2(
+               this.x / this.magnitude(),
+                this.y / this.magnitude()
+            );
+        }
+
+        else {
+            this.x = 0;
+            this.y = 0;
+        }
     }
 
     //Returns the counter-clockwise angle of the current Vector2 
